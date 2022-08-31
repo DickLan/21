@@ -54,6 +54,9 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrX-tL-lq6"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xje-nu-d2t">
                                 <rect key="frame" x="37" y="667" width="160" height="90"/>
@@ -63,7 +66,7 @@
                                         <rect key="frame" x="8" y="18" width="144" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="０" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSH-VR-giZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="81000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSH-VR-giZ">
                                                 <rect key="frame" x="35" y="8" width="101" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -349,12 +352,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bangLabel" destination="vGF-Mv-3fl" id="uI2-3o-j1O"/>
                         <outlet property="enemyBangLabel" destination="uoD-Sj-2Yj" id="5tF-RE-yb1"/>
                         <outlet property="enemyGetCardButtonOutlet" destination="YtU-5L-qGE" id="JVc-c2-7Lq"/>
                         <outlet property="enemyScoreLabel" destination="L0l-qo-Aci" id="j6r-P4-2Oh"/>
                         <outlet property="iGetCardButtonOutlet" destination="Bqj-97-yDF" id="eKA-1V-PNE"/>
                         <outlet property="myScoreLabel" destination="p7F-k4-jA4" id="l5x-qm-JhG"/>
+                        <outlet property="mybangLabel" destination="vGF-Mv-3fl" id="uI2-3o-j1O"/>
                         <outlet property="resultLabel" destination="woK-CC-5z0" id="qSq-5H-hd8"/>
                         <outletCollection property="myCardsImageView" destination="BKb-44-GLI" collectionClass="NSMutableArray" id="tNV-G4-iSr"/>
                         <outletCollection property="myCardsImageView" destination="4mb-j2-wLf" collectionClass="NSMutableArray" id="ngX-Fx-gNH"/>

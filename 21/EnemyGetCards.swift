@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension FirstViewController{
-   
+    // give random cards to enemy
     func enemyGetCards(){
         if enemyScore < 21 {
             // tempCard = String
@@ -64,6 +64,9 @@ extension FirstViewController{
         }
 
     }
+    
+    
+    
     
     
 }

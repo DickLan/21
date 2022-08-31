@@ -9,15 +9,26 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    //chips
+    
+    
     //public
     var cards = [String]()
-    var timer:Timer?
+    var timer=Timer()
     @IBOutlet weak var resultLabel: UILabel!
+    
+    // for timer
+    var i = Int.random(in: 1...5)
+    var j = Int.random(in: 1...5)
+    var timerCount = 0
+    
+
+    
     //mine
     
     @IBOutlet var myCardsImageView: [UIImageView]!
     @IBOutlet weak var myScoreLabel: UILabel!
-    @IBOutlet weak var bangLabel: UILabel!
+    @IBOutlet weak var mybangLabel: UILabel!
     @IBOutlet weak var iGetCardButtonOutlet: Imagebutton!
     
     var myScore = 0
@@ -34,10 +45,14 @@ class FirstViewController: UIViewController {
     var enemyGenerateTimes = 0
     var enemyCards = [String]()
     
+    // before viewDIdLoad
+    /*
+    --------------------------------------
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bangLabel.isHidden = true
+        mybangLabel.isHidden = true
         enemyBangLabel.isHidden = true
         enemyGetCardButtonOutlet.isUserInteractionEnabled = false
         resultLabel.isHidden = true
@@ -94,7 +109,7 @@ class FirstViewController: UIViewController {
             } //if let close
             if myScore > 21{
                 print("bang")
-                bangLabel.isHidden = false}
+                mybangLabel.isHidden = false}
                 return
             }
 
@@ -106,36 +121,35 @@ class FirstViewController: UIViewController {
     @IBAction func giveEnemyCard(_ sender: UIButton) {
         iGetCardButtonOutlet.isUserInteractionEnabled = false
         enemyGetCardButtonOutlet.isUserInteractionEnabled = false
+        if myScore < 22{
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [self] timer in
+                if self.enemyScore < 22{
+                    self.enemyGetCards()
+                    print(self.enemyScore)
+                    timerUpdate()
 
-        // give random cards to enemy
-        let i = Int.random(in: 1...5)
-        //還沒爆掉時
 
-        if bangLabel.isHidden == true{
-            for _ in 1...i{
-                if enemyScore < 21 {
-                    enemyGetCards()
                 }
+            })
         }
-            
-            
-            
-        //比較雙方牌分
-        if myScore > enemyScore{
-            resultLabel.text = "你淫惹"
-            resultLabel.isHidden = false
-        }else{
-            resultLabel.text = "對手淫惹"
-            resultLabel.isHidden = false
-        }
-            
+
+
         }
         
         
 
         
+    
+    
+    @IBAction func nextRound(_ sender: Any) {
+
+        meClear()
+        //enemy clear
+        enemyClear()
+    }
+    
     
     }
     
 
-}
+
